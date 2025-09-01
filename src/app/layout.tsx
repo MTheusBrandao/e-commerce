@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import clsx from "clsx";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx(`${geistSans.variable} ${geistMono.variable} antialiased`, 'bg-slate-700')}
       >
-        
         <Navbar />
-        <main className='bg-slate-700 h-screen p-16'>{children}</main>
+        <main className="bg-slate-700 h-screen p-16">{children}</main>
       </body>
     </html>
   );
